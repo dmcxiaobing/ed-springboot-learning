@@ -2,13 +2,17 @@ package com.david.edspringbootlearning.introduce.freemarker.web.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.david.edspringbootlearning.introduce.freemarker.method.SortMethod;
 
 /**
  * 简单的介绍的freemarkerController
@@ -49,6 +53,7 @@ public class FreemarkerController1 {
 	public ModelAndView free1ModelAndView() {
 		System.out.println("free1ModelAndView");
 		ModelAndView modelAndView = new ModelAndView();
+		// 设置数据
 		modelAndView.addObject("intVar", 100);
 		modelAndView.addObject("LongVar", 10000000000000000L);
 		modelAndView.addObject("doubleVar", 3.141592675d);
@@ -57,6 +62,7 @@ public class FreemarkerController1 {
 		modelAndView.addObject("dateVar1", new Date());
 		modelAndView.addObject("nullVar1", null);
 		modelAndView.addObject("nullVar", "我是空");
+		// 设置转发路径
 		modelAndView.setViewName("/freemarker/free1");
 		return modelAndView;
 	}
@@ -78,6 +84,9 @@ public class FreemarkerController1 {
 		return "/freemarker/free1";
 	}
 
+	/**
+	 * 集合的List介绍
+	 */
 	@RequestMapping("/free2")
 	public ModelAndView free2() {
 		ModelAndView mv2 = new ModelAndView();
@@ -90,6 +99,30 @@ public class FreemarkerController1 {
 		mv2.addObject("myList", list);
 		mv2.setViewName("/freemarker/free2");
 		return mv2;
+	}
+
+	/**
+	 * map的一些功能介绍.switch等介绍
+	 */
+	@RequestMapping(value = "/free3")
+	public String free3(Model model) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("Java", "你好Java");
+		map.put("address", "北京");
+		map.put("身高", 172);
+		map.put("money", 100.5);
+		model.addAttribute("map", map);
+		return "/freemarker/free3";
+	}
+
+	/**
+	 * 排序的一些介绍
+	 */
+	@RequestMapping("/free4")
+	public String free4(Model model) {
+		// 设置数据
+		model.addAttribute("sort_int", new SortMethod());
+		return "/freemarker/free4";
 	}
 
 	/**
