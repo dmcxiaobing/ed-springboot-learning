@@ -7,7 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.david.edspringbootlearning.EdSpringbootLearningApplication;
-
+/**
+ * @author ：david  
+ * @新浪微博 ：https://weibo.com/mcxiaobing
+ * @github: https://github.com/QQ986945193
+ */
 @SpringBootApplication
 @Configuration
 @EnableAutoConfiguration
