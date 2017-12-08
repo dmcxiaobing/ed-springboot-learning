@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 3，将项目使用maven打成jar包，直接运行jar包
  * 
  */
- @RestController // 这个注解，表示此类是一个controller.直接返回的json
+ @RestController // 这个注解，表示此类是一个controller.直接返回的json.相当与ResponseBody,Controller
 public class IntroduceController {
 
 	/**

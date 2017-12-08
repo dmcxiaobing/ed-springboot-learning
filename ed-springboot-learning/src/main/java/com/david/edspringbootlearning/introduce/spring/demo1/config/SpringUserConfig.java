@@ -20,8 +20,8 @@ import com.jolbox.bonecp.BoneCPDataSource;
  */
 // 通过该注解来表名此类是一个spring的配置。相当于一个XML
 @Configuration
-// 配置扫描包
-@ComponentScan(basePackages = "com.david.edspringbootlearning.introduce.spring.demo1.config")
+// 配置扫描包。扫描整个demo1.因为有service，所以不能配置到config目录下
+@ComponentScan(basePackages = "com.david.edspringbootlearning.introduce.spring.demo1")
 // 配置扫描资源文件
 @PropertySource(value = { "classpath:jdbc.properties" }, ignoreResourceNotFound = true)
 public class SpringUserConfig {
@@ -45,7 +45,7 @@ public class SpringUserConfig {
 
 	@Value("${jdbc.password}")
 	private String jdbcPassword;
-
+	// 调用关闭的时候，进行关闭
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {
 		BoneCPDataSource boneCPDataSource = new BoneCPDataSource();
