@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 启动的application。建议放到根目录下面,主要用于做一些框架配置
+ * 自定义springboot页面。http://patorjk.com/software/taag/#p=display&h=3&v=3&f=Stampatello&t=david%20Spring%20Boot
  * @Author ：程序员小冰
  * @新浪微博 ：http://weibo.com/mcxiaobing
  * @GitHub: https://github.com/QQ986945193
