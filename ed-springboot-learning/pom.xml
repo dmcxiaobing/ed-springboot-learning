@@ -25,6 +25,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
+
 	<!-- spring-boot的web启动的jar包 -->
 	<dependencies>
 		<!-- 支持web项目 -->
@@ -54,11 +55,8 @@
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 		<!-- bonecp的连接池 -->
-		<!-- <dependency>
-			<groupId>com.jolbox</groupId>
-			<artifactId>bonecp-spring</artifactId>
-			<version>0.8.0.RELEASE</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>com.jolbox</groupId> <artifactId>bonecp-spring</artifactId> 
+			<version>0.8.0.RELEASE</version> </dependency> -->
 		<!--thymeleaf模板jar，是很不错的html数据传递取值，类似jsp的jstl -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -81,39 +79,46 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
-
+		<!-- 配置mybatis和springboot -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<!--pagehelper -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>RELEASE</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-			<!--springboot之maven的插件 。java编译插件 -->
 			<plugin>
+				<!--springboot之maven的插件 。java编译插件 -->
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!-- <configuration>
-					<fork>true</fork>
-					<source>1.8</source>
-					<target>1.8</target>
-					<encoding>UTF-8</encoding>
-				</configuration> -->
+				<!-- <configuration> <fork>true</fork> <source>1.8</source> <target>1.8</target> 
+					<encoding>UTF-8</encoding> </configuration> -->
+				<!-- springboot的热部署插件 -->
+				<dependencies>
+					<dependency>
+						<groupId>org.springframework</groupId>
+						<artifactId>springloaded</artifactId>
+						<version>1.2.5.RELEASE</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<!-- 资源文件拷贝插件 -->
-		<!-- 	<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-resources-plugin</artifactId> 
+				<configuration> <encoding>UTF-8</encoding> </configuration> </plugin> -->
 		</plugins>
 		<pluginManagement>
 			<plugins>
 				<!-- 配置Tomcat插件 -->
-				<!-- <plugin>
-					<groupId>org.apache.tomcat.maven</groupId>
-					<artifactId>tomcat7-maven-plugin</artifactId>
-					<version>2.2</version>
-				</plugin> -->
+				<!-- <plugin> <groupId>org.apache.tomcat.maven</groupId> <artifactId>tomcat7-maven-plugin</artifactId> 
+					<version>2.2</version> </plugin> -->
 			</plugins>
 		</pluginManagement>
 	</build>
