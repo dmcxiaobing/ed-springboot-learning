@@ -1,0 +1,3 @@
+#这个是发布的时候，使用。具体引用可以看application.yml
+server:
+  port: 8080
