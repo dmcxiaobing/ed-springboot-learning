@@ -5,8 +5,11 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.david.edspringbootjpa.dao.UserDao;
@@ -45,8 +48,41 @@ public class UserController {
 		return userDao.findOne(uid);
 	}
 	
+	/**
+	 * 新增或者更新一个用户。修改。post请求。get会有405不支持
+	 * http://localhost:8082/update/3?username=xiaobing&age=345
+	 */
+	@PostMapping(value="/update/{uid}")
+	public User addUser(@PathVariable("uid")Integer uid,
+			@RequestParam("username")String username,
+			@RequestParam("age")Integer age) {
+		User user = new User();
+		user.setAge(uid);
+		user.setUsername(username);
+		user.setAge(age);
+		return userDao.save(user);
+	}
 	
 	
+	/**
+	 * 根据uid删除用户，使用restful风格
+	 * http://localhost:8082/delete/2
+	 * 
+	 */
+	@DeleteMapping(value="/delete/{uid}")
+	public void deleteUser(@PathVariable(value="uid")Integer 
+			uid) {
+		userDao.delete(uid);
+	}
+	
+	/**
+	 * 通过年龄查询所有用户
+	 * http://localhost:8082/findByAge/age/22
+	 */
+	@GetMapping(value="/findByAge/age/{age}")
+	public List<User> findByAge(@PathVariable(value="age")Integer age){
+		return userDao.findByAge(age);
+	}
 //	private UserService userService;
 	
 	
