@@ -7,7 +7,10 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/edspringboot
     username: root
     password: 1234
+   # 配置jpa 
   jpa:
     hibernate:
+      # 自动更新数据库。create为新建。
       ddl-auto: update
-    show-sql: true
+      # 显示数据库SQL语句
+      show-sql: true
