@@ -21,7 +21,7 @@ import java.util.List;
 public class UserController {
     @Resource
     private UserService userService;
-
+ 
     @PostMapping("/add")
     public Result add(User user) {
         userService.save(user);
@@ -39,13 +39,71 @@ public class UserController {
         userService.update(user);
         return ResultGenerator.genSuccessResult();
     }
-
+    /**
+     * 
+	    {
+		    "code": 200,
+		    "data": {
+		        "age": 30,
+		        "uid": 1,
+		        "username": "david"
+		    },
+		    "message": "SUCCESS"
+		}
+     * @param id
+     * @return
+     */
     @PostMapping("/detail")
     public Result detail(@RequestParam Integer id) {
         User user = userService.findById(id);
         return ResultGenerator.genSuccessResult(user);
     }
 
+    /**
+     * http://localhost:8080/user/list?page=1&size=1
+     * @param page 当前页 从第1页开始
+     * @param size 每页显示数量 默认 查所有
+			{
+			    "code": 200,
+			    "data": {
+			        "endRow": 12,
+			        "firstPage": 0,
+			        "hasNextPage": false,
+			        "hasPreviousPage": false,
+			        "isFirstPage": false,
+			        "isLastPage": true,
+			        "lastPage": 0,
+			        "list": [
+			            {
+			                "age": 30,
+			                "uid": 1,
+			                "username": "david"
+			            },
+			            {
+			                "age": 22,
+			                "uid": 67,
+			                "username": "xiaobing"
+			            }
+			        ],
+			        "navigateFirstPage": 0,
+			        "navigateLastPage": 0,
+			        "navigatePages": 8,
+			        "navigatepageNums": [],
+			        "nextPage": 0,
+			        "orderBy": "",
+			        "pageNum": 0,
+			        "pageSize": 0,
+			        "pages": 0,
+			        "prePage": 0,
+			        "size": 12,
+			        "startRow": 1,
+			        "total": 12
+			    },
+			    "message": "SUCCESS"
+			}
+     * 
+     * 
+     */
     @PostMapping("/list")
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
