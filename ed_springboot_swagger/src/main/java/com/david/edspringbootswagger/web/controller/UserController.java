@@ -8,6 +8,7 @@ import com.github.pagehelper.PageInfo;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiOperation;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/user")
+// 使用swagger的API
 @Api("userController相关api")
 public class UserController {
     @Resource
@@ -41,18 +43,19 @@ public class UserController {
 	}
 	
      */
+    @ApiOperation("添加一个用户")
     @PostMapping("/add")
     public Result add(User user) {
         userService.save(user);
         return ResultGenerator.genSuccessResult();
     }
-
+    @ApiOperation("根据ID删除用户")
     @PostMapping("/delete")
     public Result delete(@RequestParam Integer id) {
         userService.deleteById(id);
         return ResultGenerator.genSuccessResult();
     }
-
+    @ApiOperation("更新用户")
     @PostMapping("/update")
     public Result update(User user) {
         userService.update(user);
@@ -75,6 +78,7 @@ public class UserController {
 		    "message": "接口 [/user/detail] 内部错误，请联系管理员"
 		}
      */
+    @ApiOperation("查看用户详情")
     @PostMapping("/detail")
     public Result detail(@RequestParam Integer id) {
         User user = userService.findById(id);
@@ -128,6 +132,7 @@ public class UserController {
      * 
      * 
      */
+    @ApiOperation("查询所有用户")
     @PostMapping("/list")
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
