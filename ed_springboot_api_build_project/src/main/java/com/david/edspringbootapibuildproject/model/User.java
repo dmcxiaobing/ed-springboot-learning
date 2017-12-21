@@ -1,7 +1,12 @@
 package com.david.edspringbootapibuildproject.model;
 
 import javax.persistence.*;
-
+/**
+ * javabean对应数据库字段
+ * @Author ：David
+ * @新浪微博 ：http://weibo.com/mcxiaobing
+ * @GitHub: https://github.com/QQ986945193
+ */
 public class User {
     @Id
     private Integer uid;

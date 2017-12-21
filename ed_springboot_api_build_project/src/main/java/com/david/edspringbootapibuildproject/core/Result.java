@@ -50,7 +50,9 @@ public class Result {
         this.data = data;
         return this;
     }
-
+    /**
+     * 直接将对象转换成json
+     */
     @Override
     public String toString() {
         return JSON.toJSONString(this);

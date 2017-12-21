@@ -1,7 +1,13 @@
 package com.david.edspringbootapibuildproject.core;
 
 /**
- * 响应码枚举，参考HTTP状态码的语义
+ * @Author ：David
+ * @新浪微博 ：http://weibo.com/mcxiaobing
+ * @GitHub: https://github.com/QQ986945193
+ */
+/**
+ * 
+ * 响应码枚举，参考HTTP状态码的语义。可以自定义需求。
  */
 public enum ResultCode {
     SUCCESS(200),//成功

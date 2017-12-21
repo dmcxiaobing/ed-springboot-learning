@@ -64,14 +64,18 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
         exceptionResolvers.add(new HandlerExceptionResolver() {
             public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception e) {
                 Result result = new Result();
-                if (e instanceof ServiceException) {//业务失败的异常，如“账号或密码错误”
+                if (e instanceof ServiceException) {
+                	// 业务失败的异常，如“账号或密码错误”
                     result.setCode(ResultCode.FAIL).setMessage(e.getMessage());
                     logger.info(e.getMessage());
                 } else if (e instanceof NoHandlerFoundException) {
+                	// 404异常 
                     result.setCode(ResultCode.NOT_FOUND).setMessage("接口 [" + request.getRequestURI() + "] 不存在");
                 } else if (e instanceof ServletException) {
+                	// 请求失败 400
                     result.setCode(ResultCode.FAIL).setMessage(e.getMessage());
                 } else {
+                	// 服务器错误异常 500
                     result.setCode(ResultCode.INTERNAL_SERVER_ERROR).setMessage("接口 [" + request.getRequestURI() + "] 内部错误，请联系管理员");
                     String message;
                     if (handler instanceof HandlerMethod) {
@@ -124,10 +128,16 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
             });
         }
     }
-
+    /**
+     * 统一的 json异常数据返回
+     * @param response对象
+     * @param result 统一封装的javabean数据对象
+     */
     private void responseResult(HttpServletResponse response, Result result) {
-        response.setCharacterEncoding("UTF-8");
+    	// 响应编码
+    	response.setCharacterEncoding("UTF-8");
         response.setHeader("Content-type", "application/json;charset=UTF-8");
+        // 响应状态。具体数据结果是result
         response.setStatus(200);
         try {
             response.getWriter().write(JSON.toJSONString(result));
