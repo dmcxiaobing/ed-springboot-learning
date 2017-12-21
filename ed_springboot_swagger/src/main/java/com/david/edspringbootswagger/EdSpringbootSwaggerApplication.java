@@ -42,6 +42,7 @@ https://github.com/swagger-api/swagger-core/wiki/Annotations#apimodel
  */
 @SpringBootApplication        //same as @Configuration+@EnableAutoConfiguration+@ComponentScan
 @EnableSwagger2             //启动swagger注解
+//http://localhost:8080/swagger-ui.html
 public class EdSpringbootSwaggerApplication {
 
 	public static void main(String[] args) {

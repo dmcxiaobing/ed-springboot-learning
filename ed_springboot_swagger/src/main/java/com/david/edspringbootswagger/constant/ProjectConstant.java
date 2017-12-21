@@ -19,7 +19,7 @@ public class ProjectConstant {
 	public static final String MAPPER_INTERFACE_REFERENCE = BASE_PACKAGE + ".core.Mapper";// Mapper插件基础接口的完全限定名
 
 	// JDBC配置，请修改为你项目的实际配置
-	public static final String JDBC_URL = "jdbc:mysql://localhost:3306/edspringboot";
+	public static final String JDBC_URL = "jdbc:mysql://192.168.1.104:3306/edspringboot";
 	public static final String JDBC_USERNAME = "root";
 	public static final String JDBC_PASSWORD = "1234";
 	public static final String JDBC_DIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
