@@ -6,6 +6,9 @@ import com.david.edspringbootswagger.model.RestfulUser;
 import com.david.edspringbootswagger.service.RestfulUserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -16,6 +19,7 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/restful/user")
+//@EnableSwagger2
 public class RestfulUserController {
     @Resource
     private RestfulUserService restfulUserService;

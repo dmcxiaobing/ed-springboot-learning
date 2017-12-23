@@ -9,6 +9,7 @@ import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,7 @@ import java.util.List;
 @RequestMapping("/user")
 // 使用swagger的API
 @Api("userController相关api")
+//@EnableSwagger2
 public class UserController {
     @Resource
     private UserService userService;
