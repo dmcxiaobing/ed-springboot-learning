@@ -98,17 +98,19 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 //        });
 //    }
 
-    
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("swagger-ui.html")
-          .addResourceLocations("classpath:/META-INF/resources/");
-
-        registry.addResourceHandler("/webjars/**")
-          .addResourceLocations("classpath:/META-INF/resources/webjars/");
-    }
-    
-    
+    /**
+     * swagger的配置。详情看swagger
+     */
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("swagger-ui.html")
+//          .addResourceLocations("classpath:/META-INF/resources/");
+//
+//        registry.addResourceHandler("/webjars/**")
+//          .addResourceLocations("classpath:/META-INF/resources/webjars/");
+//    }
+//    
+//    
     //解决跨域问题
     @Override
     public void addCorsMappings(CorsRegistry registry) {
