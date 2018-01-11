@@ -26,7 +26,7 @@ public class SendMessageController {
 	@RequestMapping("/sendMessage")
 	public String sendMessage() {
 		String accName = "986945193@qq.com";
-		String accPwd = MD5.getMd5String("123456");
+		String accPwd = MD5.getMd5String("https://github.com/QQ986945193");
 		String aimcodes = "986945193";
 		String content = "你好，欢迎注册网站。【小冰科技】";
 		String schTime = "";
@@ -50,7 +50,7 @@ public class SendMessageController {
 		
 		String Id = 300+"";
 		String Name = "qq986945193";
-		String Psw = MD5.getMd5String("123456");
+		String Psw = MD5.getMd5String("https://github.com/QQ986945193");
 		String Phone = "986945193";
 		String Message = CharsetUtils.getURLEncoder( "你好，欢迎注册网站。【小冰科技】");
 		String Timestamp = 0+"";
