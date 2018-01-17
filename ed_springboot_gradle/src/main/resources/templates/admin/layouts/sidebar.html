@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>sidebar</title>
+</head>
+<body>
+	<div id="sidebar" class="sidebar-fixed" th:fragment="sidebar">
+		<div id="sidebar-content">
+
+			<!-- Search Input -->
+			<form class="sidebar-search">
+				<div class="input-box">
+					<button type="submit" class="submit">
+						<i class="icon-search"></i>
+					</button>
+					<span> <input type="text" placeholder="搜索..." />
+					</span>
+				</div>
+			</form>
+
+			<!--=== Navigation ===-->
+			<ul id="nav">
+				<div class="sidebar-title">
+					<span>后台管理</span>
+				</div>
+				<li th:class="${dashboard} ? 'current' : ''"><a href="/">
+						<i class="icon-dashboard"></i> 仪表盘
+				</a></li>
+				<li th:class="${user} ? 'current' : ''"><a href="/admin/user"> <i
+						class="icon-user"></i> 用户管理
+				</a></li>
+				<li th:class="${news} ? 'current' : ''"><a href="/admin/news"> <i
+						class="icon-list"></i> 新闻管理
+				</a></li>
+				<div class="sidebar-title">
+					<span>API管理</span>
+				</div>
+				<li><a href="/swagger-ui.html" target="_blank"> <i
+						class="icon-rocket"></i> 在线API手册
+				</a></li>
+				<!-- 				<li><a href="/lightadmin" target="_blank"> <i
+						class="icon-book"></i> 后端数据管理
+				</a></li> -->
+
+			</ul>
+
+		</div>
+		<div id="divider" class="resizeable"></div>
+	</div>
+	<!-- /Sidebar -->
+</body>
+</html>

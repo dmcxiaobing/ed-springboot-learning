@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @SpringBootApplication
 public class EdSpringbootGradleApplication {
-
+	/**
+	 * 	http://localhost:8083
+		user: admin , pass: admin
+		API调试
+		http://localhost:8083/swagger-ui.html
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(EdSpringbootGradleApplication.class, args);
 	}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>header</title>
+</head>
+
+<body>
+	<div id="content" th:fragment="content">
+		<div class="container">
+			<!-- Breadcrumbs line -->
+			<div class="crumbs">
+				<ul id="breadcrumbs" class="breadcrumb">
+					<li><i class="icon-home"></i> <a href="/">仪表盘</a></li>
+					<li class="current">新闻管理</li>
+				</ul>
+
+			</div>
+			<!-- /Breadcrumbs line -->
+
+			<!--=== Page Header ===-->
+			<div class="page-header">
+				<div class="page-title">
+					<span th:inline="text">欢迎使用，[[${#httpServletRequest.remoteUser}]]!</span>
+				</div>
+
+			</div>
+			<!-- /Page Header -->
+
+			<!--=== Page Content ===-->
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="widget box">
+						<div class="widget-header">
+							<h4>
+								<i class="icon-reorder"></i> 新闻编辑
+							</h4>
+							<div class="toolbar no-padding">
+								<div class="btn-group">
+									<span class="btn btn-xs collapse"><i
+										class="icon-angle-down"></i></span>
+								</div>
+							</div>
+						</div>
+						<div class="content no-padding">
+							<form action="#" th:action="@{/admin/news/edit}"
+								th:object="${newsEdit}" method="post">
+								<input type="hidden" th:field="*{id}" />
+								<p>
+									标题: <input type="text" th:field="*{title}" />
+								</p>
+								<p>
+									图片: <input type="text" th:field="*{img}" />
+								</p>
+								<p>
+									内容:
+									<textarea rows="3" cols="20" th:field="*{content}"
+										style="margin-left: 0px;"></textarea>
+								</p>
+								<p>
+									<input type="submit" value="提交" /> <input type="reset"
+										value="重置" />
+								</p>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- /.row -->
+			<!-- /Page Content -->
+		</div>
+		<!-- /.container -->
+
+	</div>
+
+</body>
+</html>
