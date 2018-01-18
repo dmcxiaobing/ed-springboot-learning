@@ -28,4 +28,25 @@ public class NewsServiceImpl implements NewsService {
 	public Iterable<News> findAll() {
 		return newsRepository.findAll();
 	}
+	/**
+	 * 保存
+	 */
+	@Override
+	public void save(News news) {
+		newsRepository.save(news);
+	}
+	/**
+	 * 根据主键id查找
+	 */
+	@Override
+	public News findById(Long id) {
+		return newsRepository.findOne(id);
+	}
+	/**
+	 * 根据主键id删除
+	 */
+	@Override
+	public void deleteById(Long id) {
+		newsRepository.delete(id);
+	}
 }

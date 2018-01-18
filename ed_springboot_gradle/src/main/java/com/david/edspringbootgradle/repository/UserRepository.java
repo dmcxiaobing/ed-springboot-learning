@@ -14,4 +14,6 @@ import com.david.edspringbootgradle.domain.User;
 @RestResource(exported = false) // 禁止暴露REST
 public interface UserRepository  extends CrudRepository<User, Long>{
 
+	User findByUsername(Object currentUsername);
+
 }

@@ -13,4 +13,10 @@ public interface NewsService {
 
 	Iterable<News> findAll();
 
+	void save(News news);
+
+	News findById(Long id);
+
+	void deleteById(Long id);
+
 }
