@@ -45,11 +45,12 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-aop')
-	compile('org.springframework.boot:spring-jdbc')
+	// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.3.RELEASE'
 	compile('io.springfox:springfox-swagger2:2.2.2')
 	compile('io.springfox:springfox-swagger-ui:2.2.2')
 	compile('org.springframework.boot:spring-boot-starter-undertow')
 	runtime('mysql:mysql-connector-java')
 	   // 该依赖对于编译测试是必须的，默认包含编译产品依赖和编译时依
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile('org.springframework.boot:spring-boot-starter-test')
 }

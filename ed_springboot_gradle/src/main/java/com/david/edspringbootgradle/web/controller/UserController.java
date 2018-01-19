@@ -28,6 +28,9 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	
+	
+	
 	@RequestMapping(value = "getUserList",method=RequestMethod.POST)
 	public Object getUserList(@RequestParam(required = false) int current, @RequestParam(required = false) int rowCount,
 			@RequestParam(required = false) String searchPhrase) {
