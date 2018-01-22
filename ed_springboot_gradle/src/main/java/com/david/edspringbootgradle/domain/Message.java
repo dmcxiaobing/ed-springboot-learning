@@ -36,6 +36,30 @@ public class Message implements Serializable{
 		return "Message [code=" + code + ", message=" + message + ", content=" + content + "]";
 	}
 	
-	
+	public Message(int code, String message) {
+		this.code = code;
+		this.message = message;
+	}
+
+	public Message(int code, String message, Object content) {
+		this.code = code;
+		this.message = message;
+		this.content = content;
+	}
+
+	public void setMessage(int code, String message) {
+		this.code = code;
+		this.message = message;
+		this.content = "no content";
+	}
+
+	public void setMessage(int code, String message, Object content) {
+		this.code = code;
+		this.message = message;
+		this.content = content;
+	}
+	public Message() {
+		super();
+	}
 	
 }

@@ -20,21 +20,21 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
  * @weibo ：http://weibo.com/mcxiaobing
  * @github: https://github.com/QQ986945193
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//@AutoConfigureMockMvc
 public class TestUserController {
 	
 
-	@Autowired
-	private MockMvc mockMvc;
-	/**
-	 * 测试方法
-	 */
-	@Test
-	public void testHello() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andExpect(content().string(equalTo("hello word gradle")));
-	}
+//	@Autowired
+//	private MockMvc mockMvc;
+//	/**
+//	 * 测试方法
+//	 */
+//	@Test
+//	public void testHello() throws Exception {
+//		mockMvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
+//				.andExpect(status().isOk())
+//				.andExpect(content().string(equalTo("hello word gradle")));
+//	}
 }

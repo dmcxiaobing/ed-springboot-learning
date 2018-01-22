@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @SpringBootApplication
 public class EdSpringbootGradleApplication {
 	/**
+	 * 
+	 * ./gradlew build && java -jar build/libs/EdSpringbootGradle-0.1.0.jar
 	 * 	http://localhost:8083
 		user: admin , pass: admin
 		API调试
