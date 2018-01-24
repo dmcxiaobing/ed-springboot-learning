@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.david</groupId>
+  <artifactId>david_springboot_parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>david_springboot_parent</name>
+  <description>this is david_springboot_parent pom</description>
+  <parent>
+		<groupId>org.springframework.boot</groupId>
+		<!--
+			Spring Boot应用启动器Starter-parent:
+			官方推荐
+			其中集成了：
+			1、使用java6编译级别
+			2、使用utf-8编码
+			3、实现了通用的测试框架 (JUnit, Hamcrest, Mockito).
+			4、智能资源过滤
+			5、智能的插件配置(exec plugin, surefire, Git commit ID, shade).
+		-->
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.8.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- 程序监控、运维 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!--springboot中修改完文件后自动reload的插件 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>springloaded</artifactId>
+		</dependency>
+		<!--springboot中修改完文件后自动reload的插件 end -->
+	</dependencies>
+	<modules>
+		<module>david_springboot_javamail</module>
+	</modules>
+</project>
