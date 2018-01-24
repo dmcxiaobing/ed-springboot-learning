@@ -52,5 +52,6 @@
 	</dependencies>
 	<modules>
 		<module>david_springboot_javamail</module>
+		<module>david_springboot_thymeleaf</module>
 	</modules>
 </project>
