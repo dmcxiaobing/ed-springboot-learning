@@ -19,6 +19,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Test;
 
+import com.david.crawler.utils.CharsetUtils;
 import com.david.crawler.utils.JdbcUtils;
 
 
@@ -74,13 +75,14 @@ public class HttpclientJsoup {
 				// .setParameter(ConnRouteParams.DEFAULT_PROXY, new HttpHost("dailiip"))
 				.setParameter(CoreConnectionPNames.SO_TIMEOUT, 10000);
 		// 使用get请求，创建请求对象
-		HttpGet httpGet = new HttpGet("http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/31/3101.html");
+		HttpGet httpGet = new HttpGet("http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/42/4202.html");
 //		HttpGet httpGet = new HttpGet("http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2016/12/1201.html");
 		// 发送请求，获取响应数据
 		HttpResponse response = httpClient.execute(httpGet);
 		// 将网页实体转换成字符串
 		String content = EntityUtils.toString(response.getEntity(), "gb2312");
 
+//		String contentUtf8 = CharsetUtils.getGetMethodParameter(content);
 		// jsoup负责解析网页。
 		Document document = Jsoup.parse(content);
 		// 使用元素选择器获取网页内容
