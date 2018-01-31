@@ -32,8 +32,7 @@ CREATE TABLE `restful_user` (
 INSERT INTO `restful_user` VALUES ('1', '30', 'david');
 INSERT INTO `restful_user` VALUES ('3', '345', 'xiaobing');
 INSERT INTO `restful_user` VALUES ('4', '345', 'xiaobing');
-INSERT INTO `restful_user` VALUES ('5', '223', 'qq986945193');
-INSERT INTO `restful_user` VALUES ('6', '120', 'qq986945193');
+INSERT INTO `restful_user` VALUES ('5', '223', 'qq986945193'); INSERT INTO `restful_user` VALUES ('6', '120', 'qq986945193');
 INSERT INTO `restful_user` VALUES ('7', '111', 'http://weibo.com/mcxiaobing');
 INSERT INTO `restful_user` VALUES ('8', null, 'http://weibo.com/mcxiaobing');
 INSERT INTO `restful_user` VALUES ('12', '22', 'xiaobing');
