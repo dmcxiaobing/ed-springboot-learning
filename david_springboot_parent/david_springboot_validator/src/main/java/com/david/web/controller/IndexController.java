@@ -43,7 +43,6 @@ public class IndexController {
 		List<Map<String, String>> errorList = new ArrayList<>();
 		loadErrorList(userResult, errorList);
 		loadErrorList(otherResult, errorList);
-		
 		// 回显信息
 		model.addAttribute("user",user);
 		model.addAttribute("other",other);
