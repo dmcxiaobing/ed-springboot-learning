@@ -54,5 +54,6 @@
 		<module>david_springboot_javamail</module>
 		<module>david_springboot_thymeleaf</module>
 		<module>david_springboot_jpush</module>
+		<module>david_springboot_websocket</module>
 	</modules>
 </project>
