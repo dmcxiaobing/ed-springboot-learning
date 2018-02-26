@@ -17,7 +17,7 @@ public class WebSocketConfig {
 	/**
 	 * 配置websocket server的bean
 	 */
-	@Bean
+	@Bean						 
 	public ServerEndpointExporter serverEndpointExporter() {
 		return new ServerEndpointExporter();
 	}

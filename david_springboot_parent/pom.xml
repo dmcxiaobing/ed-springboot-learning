@@ -17,9 +17,10 @@
 			3、实现了通用的测试框架 (JUnit, Hamcrest, Mockito).
 			4、智能资源过滤
 			5、智能的插件配置(exec plugin, surefire, Git commit ID, shade).
+			<version>1.5.6.RELEASE</version>这里不适用1.5.8，因为websocket会出现包找不到问题，所以用1.5.6
 		-->
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.8.RELEASE</version>
+		<version>1.5.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<properties>
@@ -43,7 +44,7 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<!--springboot中修改完文件后自动reload的插件 -->
+		<!--springboot中修改完文件后自动reload的插件 ，修改完文件Ctrl + F9 Make一下就可以 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>springloaded</artifactId>

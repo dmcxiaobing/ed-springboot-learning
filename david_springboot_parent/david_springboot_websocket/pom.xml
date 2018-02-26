@@ -6,8 +6,10 @@
 		<artifactId>david_springboot_parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	<groupId>com.david</groupId>
 	<artifactId>david_springboot_websocket</artifactId>
 	<name>david_springboot_websocket</name>
+	<version>0.0.1-SNAPSHOT</version>
 	<description>this is david_springboot_websocket</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
