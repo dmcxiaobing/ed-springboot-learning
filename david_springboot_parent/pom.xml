@@ -56,5 +56,6 @@
 		<module>david_springboot_thymeleaf</module>
 		<module>david_springboot_jpush</module>
 		<module>david_springboot_websocket</module>
+		<module>david_springboot_logback</module>
 	</modules>
 </project>
