@@ -57,5 +57,6 @@
 		<module>david_springboot_jpush</module>
 		<module>david_springboot_websocket</module>
 		<module>david_springboot_logback</module>
+		<module>david_springboot_webservice</module>
 	</modules>
 </project>
