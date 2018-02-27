@@ -4,7 +4,7 @@ import javax.xml.ws.Endpoint;
 
 
 /**
- * 发布webservice服务
+ * 发布webservice服务。。这个是服务端，客户端请参考：https://github.com/QQ986945193/webservice_client
  * 
  * @author ：David
  * @weibo ：http://weibo.com/mcxiaobing
