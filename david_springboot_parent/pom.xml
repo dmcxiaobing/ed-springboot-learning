@@ -58,5 +58,6 @@
 		<module>david_springboot_websocket</module>
 		<module>david_springboot_logback</module>
 		<module>david_springboot_webservice</module>
+		<module>david_springboot_schedule</module>
 	</modules>
 </project>
