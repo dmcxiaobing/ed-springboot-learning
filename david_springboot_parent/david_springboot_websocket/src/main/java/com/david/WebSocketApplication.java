@@ -18,7 +18,6 @@ public class WebSocketApplication {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(WebSocketApplication.class, args);
 	}
-
 	/**
 	 * 转发到index.ftl
 	 */
