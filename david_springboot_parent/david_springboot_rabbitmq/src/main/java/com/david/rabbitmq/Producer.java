@@ -1,9 +1,12 @@
 package com.david.rabbitmq;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.concurrent.TimeoutException;
 
 import com.david.constants.RabbitmqConstant;
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.MessageProperties;
 import com.rabbitmq.client.AMQP.Channel;
 import com.rabbitmq.client.Connection;
 /**
@@ -14,6 +17,31 @@ import com.rabbitmq.client.Connection;
  */
 public class Producer {
 	public static void main(String[] args) throws Exception, TimeoutException {
+//		producerQueue();
+		producerTopic();
+		
+	}
+	/**
+	 * 消息的发布者，一对多。
+	 */
+	private static void producerTopic() throws IOException, Exception {
+		ConnectionFactory factory = new ConnectionFactory();
+		factory.setHost(RabbitmqConstant.HOST);
+		Connection connection  = factory.newConnection();
+		// 创建channel
+		com.rabbitmq.client.Channel channel = connection.createChannel();
+		channel.queueDeclare(RabbitmqConstant.TOPIC_NAME, true, false, false, null);
+		// 发布消息
+		String messageTopic = "messageTopic";
+		channel.basicPublish("", RabbitmqConstant.TOPIC_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN, messageTopic.getBytes());
+//		channel.close();
+//		connection.close();
+		
+	}
+	/**
+	 * queue队列消息的生产者。一对一。
+	 */
+	private static void producerQueue() throws IOException, TimeoutException, UnsupportedEncodingException {
 		// 创建连接工厂
 		ConnectionFactory connectionFactory = new ConnectionFactory();
 		// 设置rabbitmq的相关信息
@@ -36,6 +64,5 @@ public class Producer {
 		// 关闭通道和连接
 		channel.close();
 		connection.close();
-		
 	}
 }
