@@ -60,5 +60,6 @@
 		<module>david_springboot_webservice</module>
 		<module>david_springboot_schedule</module>
 		<module>david_springboot_errorpage</module>
+		<module>david_springboot_rabbitmq</module>
 	</modules>
 </project>
