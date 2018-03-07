@@ -62,5 +62,6 @@
 		<module>david_springboot_errorpage</module>
 		<module>david_springboot_rabbitmq</module>
 		<module>david_springboot_mongodb</module>
+		<module>david_springboot_activemq</module>
 	</modules>
 </project>
