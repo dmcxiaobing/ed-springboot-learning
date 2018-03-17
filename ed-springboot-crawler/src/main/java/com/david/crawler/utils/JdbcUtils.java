@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
- * 最简单的一个jdbc的封装工具类
+ * 最简单的一个jdbc的封装工具类。。使用的是c3p0数据库连接池
  */
 public class JdbcUtils {
 	private static Properties properties;

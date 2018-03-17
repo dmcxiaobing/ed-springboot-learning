@@ -1,0 +1,19 @@
+<appender name="newAppender"
+	class="ch.qos.logback.core.rolling.RollingFileAppender">
+	<!--<encoding>UTF-8</encoding> -->
+	<File>${LOG_HOME}/autoWarehouse.log</File>
+	<encoder>
+		<charset>UTF-8</charset>
+		<pattern>%d{HH:mm:ss} %msg%n</pattern>
+	</encoder>
+	<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+		<level>INFO</level>
+	</filter>
+	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		<fileNamePattern>${LOG_HOME}/autoWarehouse.%d{yyyy-MM-dd}.log</fileNamePattern>
+	</rollingPolicy>
+</appender>
+
+<logger name="newLogger" level="INFO" additivity="true">
+	<appender-ref ref="newAppender" />
+</logger>
