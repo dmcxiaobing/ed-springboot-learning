@@ -63,5 +63,6 @@
 		<module>david_springboot_rabbitmq</module>
 		<module>david_springboot_mongodb</module>
 		<module>david_springboot_activemq</module>
+		<module>david_springboot_shiro</module>
 	</modules>
 </project>
