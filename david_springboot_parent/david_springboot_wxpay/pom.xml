@@ -12,12 +12,12 @@
 	<name>david_springboot_wxpay</name>
 	<description>this is david david_springboot_wxpay</description>
 	<dependencies>
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>commons-httpclient</groupId>
 			<artifactId>commons-httpclient</artifactId>
 			<version>3.1</version>
 		</dependency>
-
+ -->
 		<!-- https://mvnrepository.com/artifact/jdom/jdom -->
 		<dependency>
 			<groupId>jdom</groupId>
@@ -54,7 +54,7 @@
             <version>4.5.3</version>
         </dependency>
 
-        <dependency>
+     <!--    <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.21</version>
@@ -64,7 +64,7 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.21</version>
-        </dependency>
+        </dependency> -->
 		
 	</dependencies>
 </project>

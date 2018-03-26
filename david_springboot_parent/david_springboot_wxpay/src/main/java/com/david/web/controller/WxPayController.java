@@ -218,6 +218,12 @@ public class WxPayController {
 	}
 
 	/************** 微信官方演示demo ******///
+	
+	
+	
+	
+	
+	
 	private WXPay wxpay;
 	private WXPayConfigImpl config;
 	private String out_trade_no;
@@ -234,7 +240,9 @@ public class WxPayController {
 	/**
 	 * 扫码支付 下单
 	 */
-	public void doUnifiedOrder() {
+	@RequestMapping("/qrcodeWxPay")
+	public void doUnifiedOrder() throws Exception {
+		TestWXPay();
 		HashMap<String, String> data = new HashMap<String, String>();
 		data.put("body", "腾讯充值中心-QQ会员充值");
 		data.put("out_trade_no", out_trade_no);
@@ -242,7 +250,7 @@ public class WxPayController {
 		data.put("fee_type", "CNY");
 		data.put("total_fee", "1");
 		data.put("spbill_create_ip", "123.12.12.123");
-		data.put("notify_url", "http://test.letiantian.me/wxpay/notify");
+		data.put("notify_url", "http://localhost:8080//wxNotify.html");
 		data.put("trade_type", "NATIVE");
 		data.put("product_id", "12");
 		// data.put("time_expire", "20170112104120");
@@ -255,6 +263,8 @@ public class WxPayController {
 		}
 	}
 
+	
+	
 	public void doOrderClose() {
 		System.out.println("关闭订单");
 		HashMap<String, String> data = new HashMap<String, String>();
