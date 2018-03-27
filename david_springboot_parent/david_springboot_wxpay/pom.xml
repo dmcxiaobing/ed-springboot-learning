@@ -49,7 +49,11 @@
 			<artifactId>httpclient</artifactId>
 			<version>4.5.3</version>
 		</dependency>
-
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.22</version>
+		</dependency>
 		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> 
 			<version>1.7.21</version> </dependency> <dependency> <groupId>org.slf4j</groupId> 
 			<artifactId>slf4j-simple</artifactId> <version>1.7.21</version> </dependency> -->

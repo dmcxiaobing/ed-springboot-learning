@@ -24,7 +24,12 @@ import javax.xml.transform.stream.StreamResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+/**
+ * 微信支付的一个工具类
+ * @author ：David
+ * @weibo ：http://weibo.com/mcxiaobing
+ * @github: https://github.com/QQ986945193
+ */
 public class WXPayUtil {
 
     /**
