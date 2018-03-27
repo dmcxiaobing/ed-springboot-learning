@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -93,16 +94,21 @@ public class ProductWxPayController {
 			// 获取微信支付的返回值。
 			String content = client.getContent();
 			// 把XML转换map对象
-			Map<String, String> resultMap = WXPayUtil.xmlToMap(content);
-			// 把map转换成json向页面输出
-			String json = FastJsonUtil.toJSONString(resultMap);
-			// 情况一；用户已经支付，
-			if ("success".equalsIgnoreCase(resultMap.get("trade_state"))) {
-				FastJsonUtil.write_json(response, json);
+			if (StringUtils.isNotBlank(content)) {
+				Map<String, String> resultMap = WXPayUtil.xmlToMap(content);
+				// 把map转换成json向页面输出
+				String json = FastJsonUtil.toJSONString(resultMap);
+				// 情况一；用户已经支付，
+				if ("success".equalsIgnoreCase(resultMap.get("trade_state"))) {
+					FastJsonUtil.write_json(response, json);
+				}
 			}
+			
 			// 情况二，超过了30秒，用户还是没有支付
 			if (System.currentTimeMillis()-startTime>30000) {
-				FastJsonUtil.write_json(response, json);  // trade_state=NOTPAY
+				Map<String, String> noPayParam = new HashMap<String, String>();
+				noPayParam.put("trade_state", "NOTPAY"); // 公众号的唯一标识
+				FastJsonUtil.write_json(response, FastJsonUtil.toJSONString(noPayParam));  // trade_state=NOTPAY
 				break;
 			}
 			Thread.sleep(3000);
