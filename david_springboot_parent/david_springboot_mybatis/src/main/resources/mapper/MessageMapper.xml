@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//testMybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.david.mapper.MessageMapper">
+	
+	<resultMap type="com.david.entity.Message" id="message_type">
+		<id property="id" column="ID" jdbcType="INTEGER"/>
+		<result property="ip" column="IP" jdbcType="VARCHAR"/>
+		<result property="insertTime" column="INSERT_TIME" jdbcType="DATE"/>
+		<result property="nickName" column="NICK_NAME" jdbcType="VARCHAR"/>
+	
+	</resultMap>
+
+	<select id="list" resultMap="message_type">
+		select * from message
+	</select>
+	<select id="count" resultType="Integer">
+	<!-- 
+	
+	   假如表沒有主键(Primary key), 那么count(1)比count(*)快，
+	
+	    如果有主键的話，那主键作为count的条件时候count(主键)最快
+	
+	    如果你的表只有一个字段的话那count(*)就是最快的
+	
+	   count(*) 跟 count(1) 的结果一样，都包括对NULL的统计
+	
+	 -->
+		select count(1) from message
+	</select>
+
+</mapper>
