@@ -11,6 +11,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>david_springboot_wxpay</name>
 	<description>this is david david_springboot_wxpay</description>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
 	<dependencies>
 		<!-- <dependency> <groupId>commons-httpclient</groupId> <artifactId>commons-httpclient</artifactId> 
 			<version>3.1</version> </dependency> -->
@@ -54,7 +59,7 @@
 			<artifactId>nekohtml</artifactId>
 			<version>1.9.22</version>
 		</dependency>
-				<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -65,4 +70,13 @@
 			<artifactId>slf4j-simple</artifactId> <version>1.7.21</version> </dependency> -->
 
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>

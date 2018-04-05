@@ -64,5 +64,12 @@
 		<module>david_springboot_mongodb</module>
 		<module>david_springboot_activemq</module>
 		<module>david_springboot_shiro</module>
+		<module>david_springboot_alipay</module>
+		<module>david_springboot_fileupload</module>
+		<module>david_springboot_interceptor</module>
+		<module>david_springboot_mybatis</module>
+		<module>david_springboot_poi</module>
+		<module>david_springboot_validator</module>
+		<module>david_springboot_wxpay</module>
 	</modules>
 </project>

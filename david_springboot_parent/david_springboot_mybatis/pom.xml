@@ -11,7 +11,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>david_springboot_mybatis</name>
 	<description>this is david_springboot_mybatis jar</description>
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
 	<dependencies>
 		<!--springboot 集成Mybatis所需jar配置 start -->
 		<!--支持使用 JDBC 访问数据库 -->
@@ -48,4 +52,13 @@
 			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
