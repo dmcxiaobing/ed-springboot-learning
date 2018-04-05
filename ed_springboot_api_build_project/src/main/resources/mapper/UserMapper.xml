@@ -8,5 +8,10 @@
     <id column="uid" jdbcType="INTEGER" property="uid" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password"/>
   </resultMap>
+
+  <select id="findUserByUsernamePassword" resultType="com.david.edspringbootapibuildproject.model.User" parameterType="com.david.edspringbootapibuildproject.model.User">
+      SELECT * FROM USER WHERE username = #{username} and password = #{password}
+  </select>
 </mapper>

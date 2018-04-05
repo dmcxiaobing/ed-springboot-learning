@@ -1,10 +1,13 @@
 package com.david.edspringbootapibuildproject.web.controller;
+import com.david.edspringbootapibuildproject.constant.MessageConstant;
 import com.david.edspringbootapibuildproject.core.Result;
 import com.david.edspringbootapibuildproject.core.ResultGenerator;
 import com.david.edspringbootapibuildproject.model.User;
 import com.david.edspringbootapibuildproject.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +24,22 @@ import java.util.List;
 public class UserController {
     @Resource
     private UserService userService;
- 
+    /**
+     * 登录。。
+     */
+    @PostMapping("/login/{username}/{password}")
+    public Result login(@PathVariable("username") String username, @PathVariable("password") String password) {
+
+        User user = userService.findUserByUsernamePassword(username, password);
+        if (user == null) {
+            // 如果user为空，则说明用户名或者密码不正确
+            return ResultGenerator.genFailResult(MessageConstant.LOGIN_MESSAGE);
+        } else {
+            // 登录成功。
+            return ResultGenerator.genSuccessResult(user);
+        }
+
+    }
     /**
      * 
 	{

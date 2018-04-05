@@ -8,4 +8,6 @@ import com.david.edspringbootapibuildproject.core.Service;
  */
 public interface UserService extends Service<User> {
 
+	User findUserByUsernamePassword(String username, String password);
+
 }

@@ -8,52 +8,72 @@ import javax.persistence.*;
  * @GitHub: https://github.com/QQ986945193
  */
 public class RestfulUser {
-    @Id
-    private Integer uid;
+	  @Id
+	    private Integer uid;
 
-    private Integer age;
+	    private Integer age;
 
-    private String username;
+	    private String username;
 
-    /**
-     * @return uid
-     */
-    public Integer getUid() {
-        return uid;
-    }
+	    private String password;
 
-    /**
-     * @param uid
-     */
-    public void setUid(Integer uid) {
-        this.uid = uid;
-    }
+	    public String getPassword() {
+	        return password;
+	    }
 
-    /**
-     * @return age
-     */
-    public Integer getAge() {
-        return age;
-    }
+	    public void setPassword(String password) {
+	        this.password = password;
+	    }
 
-    /**
-     * @param age
-     */
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+	    /**
+	     * @return uid
+	     */
+	    public Integer getUid() {
+	        return uid;
+	    }
 
-    /**
-     * @return username
-     */
-    public String getUsername() {
-        return username;
-    }
+	    /**
+	     * @param uid
+	     */
+	    public void setUid(Integer uid) {
+	        this.uid = uid;
+	    }
 
-    /**
-     * @param username
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	    /**
+	     * @return age
+	     */
+	    public Integer getAge() {
+	        return age;
+	    }
+
+	    /**
+	     * @param age
+	     */
+	    public void setAge(Integer age) {
+	        this.age = age;
+	    }
+
+	    /**
+	     * @return username
+	     */
+	    public String getUsername() {
+	        return username;
+	    }
+
+	    /**
+	     * @param username
+	     */
+	    public void setUsername(String username) {
+	        this.username = username;
+	    }
+
+	    @Override
+	    public String toString() {
+	        return "User{" +
+	                "uid=" + uid +
+	                ", age=" + age +
+	                ", username='" + username + '\'' +
+	                ", password='" + password + '\'' +
+	                '}';
+	    }
 }

@@ -8,5 +8,6 @@
     <id column="uid" jdbcType="INTEGER" property="uid" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="username" jdbcType="VARCHAR" property="username" />
+     <result column="password" jdbcType="VARCHAR" property="password"/>
   </resultMap>
 </mapper>
