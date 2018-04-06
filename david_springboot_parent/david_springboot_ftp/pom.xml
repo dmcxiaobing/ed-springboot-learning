@@ -17,6 +17,15 @@
 			<artifactId>commons-net</artifactId>
 			<version>3.3</version>
 		</dependency>
-
+		<!--thymeleaf模板jar，是很不错的html数据传递取值，类似jsp的jstl -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.22</version>
+		</dependency>
 	</dependencies>
 </project>
