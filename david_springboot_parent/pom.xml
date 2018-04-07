@@ -71,5 +71,7 @@
 		<module>david_springboot_poi</module>
 		<module>david_springboot_validator</module>
 		<module>david_springboot_wxpay</module>
+		<module>david_springboot_baseweb</module>
+		<module>david_springboot_ftp</module>
 	</modules>
 </project>
