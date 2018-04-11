@@ -1,0 +1,14 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.david</groupId>
+    <artifactId>springboot_server_parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.david</groupId>
+  <artifactId>springboot_server_manager</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>springboot_server_manager</name>
+  <description>springboot_server_manager</description>
+  <packaging>pom</packaging>
+</project>
