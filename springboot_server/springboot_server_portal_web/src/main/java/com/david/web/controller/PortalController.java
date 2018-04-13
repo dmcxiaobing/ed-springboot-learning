@@ -18,9 +18,10 @@ public class PortalController {
 	@Autowired
 	private MainService mainService;
 
-	@RequestMapping("/index")
+	@RequestMapping(value = {"/index","/"})
 	public String index() {
 		System.out.println(mainService.getMainContent());
 		return "hello dubbo Springboot";
 	}
+	
 }
