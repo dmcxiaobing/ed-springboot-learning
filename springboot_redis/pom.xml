@@ -1,0 +1,234 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.david</groupId>
+	<artifactId>springboot_redis</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<!-- Spring Boot应用启动器Starter-parent: 官方推荐 其中集成了： 1、使用java6编译级别 2、使用utf-8编码 
+			3、实现了通用的测试框架 (JUnit, Hamcrest, Mockito). 4、智能资源过滤 5、智能的插件配置(exec plugin, 
+			surefire, Git commit ID, shade). <version>1.5.6.RELEASE</version>这里不适用1.5.8，因为websocket会出现包找不到问题，所以用1.5.6 -->
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<dubbo-spring-boot>1.0.0</dubbo-spring-boot>
+		<junit.version>4.12</junit.version>
+		<druid.version>1.0.9</druid.version>
+		<httpclient.version>4.3.5</httpclient.version>
+		<joda-time.version>2.5</joda-time.version>
+		<commons-lang3.version>3.3.2</commons-lang3.version>
+		<commons-io.version>1.3.2</commons-io.version>
+		<commons-net.version>3.3</commons-net.version>
+		<jsqlparser.version>0.9.1</jsqlparser.version>
+		<commons-fileupload.version>1.3.1</commons-fileupload.version>
+		<jedis.version>2.7.2</jedis.version>
+		<quartz.version>2.2.2</quartz.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		      <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.7.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.7.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+		<!-- 程序监控、运维 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+
+		<!-- spring-boot mybatis依赖： 请不要使用1.0.0版本，因为还不支持拦截器插件， 1.1.1 是博主写帖子时候的版本，大家使用最新版本即可 -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- MyBatis提供了拦截器接口，我们可以实现自己的拦截器， 将其作为一个plugin装入到SqlSessionFactory中。 Github上有位开发者写了一个分页插件，我觉得使用起来还可以，挺方便的。 
+			Github项目地址： https://github.com/pagehelper/Mybatis-PageHelper -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+
+
+		<!--springboot中修改完文件后自动reload的插件 ，修改完文件Ctrl + F9 Make一下就可以 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>springloaded</artifactId>
+		</dependency>
+		<!--springboot中修改完文件后自动reload的插件 end -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
+		<!-- 时间操作组件 -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
+		<!-- Apache工具组件 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>${commons-net.version}</version>
+		</dependency>
+		<!-- httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<!-- quartz任务调度框架 -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>${quartz.version}</version>
+		</dependency>
+		<!-- 单元测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- MySql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- 连接池 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>${druid.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- 文件上传组件 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons-fileupload.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.39</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+
+		<plugins>
+			<!-- 资源文件拷贝插件 -->
+			<plugin>
+				<!-- <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-resources-plugin</artifactId> 
+					<configuration> <encoding>UTF-8</encoding> </configuration> -->
+				<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.5.6.RELEASE</version>
+				<configuration>
+					<mainClass>com.david.RedisApplaction</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+
+
+			<!-- java编译插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+		<!--在IDEA中maven 默认编译的时候 只搬运src/main/java里面的java文件到target/classes,其他文件会被忽略 -->
+		<!--这时，我们Mybatis的Mapper.xml文件就不能被加载进去，也就是不能映射成功 -->
+		<!--下面配置就能解决这个问题 -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+			<!-- 由于修改了默认的resource目录，导致src/main/resources的所有文件都不能被扫描，因此还要配多一个 -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+		<defaultGoal>compile</defaultGoal>
+	</build>
+	<packaging>jar</packaging>
+</project>
