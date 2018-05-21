@@ -23,21 +23,25 @@ public class DavidHttpClient {
 
 	/**
 	 * HttpClient爬取网页数据。
+	 * @throws InterruptedException 
 	 */
 	@Test
-	public void testHttpclient() throws IOException, ClientProtocolException {
-		// 创建HttpClient对象
-		HttpClient httpClient = new DefaultHttpClient();
-		// 设置响应时间，读取源码时间。代理服务器等
-		httpClient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 10000)
-		//.setParameter(ConnRouteParams.DEFAULT_PROXY, new HttpHost("dailiip"))
-		.setParameter(CoreConnectionPNames.SO_TIMEOUT, 10000);
-		// 使用get请求，创建请求对象
-		HttpGet httpGet = new HttpGet(DavidJsoup.URL);
-		// 发送请求，获取响应数据
-		HttpResponse response = httpClient.execute(httpGet);
-		// 将网页实体转换成字符串
-		String content = EntityUtils.toString(response.getEntity(),"UTF-8");
-		System.out.println(content);
+	public void testHttpclient() throws IOException, ClientProtocolException, InterruptedException {
+		while (true) {
+		
+			HttpClient httpClient = new DefaultHttpClient();
+			// 设置响应时间，读取源码时间。代理服务器等
+			httpClient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 10000)
+			//.setParameter(ConnRouteParams.DEFAULT_PROXY, new HttpHost("dailiip"))
+			.setParameter(CoreConnectionPNames.SO_TIMEOUT, 10000);
+			// 使用get请求，创建请求对象
+			HttpGet httpGet = new HttpGet("https://blog.csdn.net/huangyuhuangyu/article/details/80011683");
+			// 发送请求，获取响应数据
+			HttpResponse response = httpClient.execute(httpGet);
+			// 将网页实体转换成字符串
+			String content = EntityUtils.toString(response.getEntity(),"UTF-8");
+			System.out.println(content);
+			Thread.sleep(2000);
+		}
 	}
 }
