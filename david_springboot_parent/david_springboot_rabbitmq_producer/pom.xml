@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.david</groupId>
+		<artifactId>david_springboot_parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.david</groupId>
+	<artifactId>david_springboot_rabbitmq_producer</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
+		<!-- 引入rabbitmq -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- 程序监控、运维 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<plugins>
+			<!-- 资源文件拷贝插件 -->
+			<plugin>
+				<!-- <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-resources-plugin</artifactId> 
+					<configuration> <encoding>UTF-8</encoding> </configuration> -->
+				<configuration>
+					<mainClass>com.david.RabbitmqApplaction</mainClass>
+				</configuration>
+				<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.5.6.RELEASE</version>
+
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+
+
+			<!-- java编译插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+		<!--在IDEA中maven 默认编译的时候 只搬运src/main/java里面的java文件到target/classes,其他文件会被忽略 -->
+		<!--这时，我们Mybatis的Mapper.xml文件就不能被加载进去，也就是不能映射成功 -->
+		<!--下面配置就能解决这个问题 -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+			<!-- 由于修改了默认的resource目录，导致src/main/resources的所有文件都不能被扫描，因此还要配多一个 -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+		<defaultGoal>compile</defaultGoal>
+	</build>
+	<packaging>jar</packaging>
+</project>
