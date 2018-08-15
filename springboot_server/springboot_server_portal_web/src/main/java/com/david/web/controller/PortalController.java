@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.david.service.ContentService;
 import com.david.service.MainService;
 
 /**
@@ -20,7 +22,7 @@ public class PortalController {
 
 	@RequestMapping(value = {"/index","/"})
 	public String index() {
-		System.out.println(mainService.getMainContent());
+		System.err.println(mainService.getMainContent());
 		return "hello dubbo Springboot";
 	}
 	

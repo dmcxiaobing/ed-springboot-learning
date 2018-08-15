@@ -15,7 +15,7 @@ import com.david.service.MainService;
  */
 @Component
 public class MainServiceImpl implements MainService{
-	@Reference(version = "1.0.0")
+	@Reference(version = "content")
 	ContentService contentService;
 
 	/**

@@ -11,4 +11,8 @@
   <name>springboot_server_manager</name>
   <description>springboot_server_manager</description>
   <packaging>pom</packaging>
+  <modules>
+  	<module>springboot_server_manager_interface</module>
+  	<module>springboot_server_manager_service</module>
+  </modules>
 </project>

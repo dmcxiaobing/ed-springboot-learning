@@ -17,7 +17,7 @@ import com.david.service.impl.MainServiceImpl;
  * @weibo ：https://weibo.com/mcxiaobing
  * @github: https://github.com/QQ986945193
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.david.*")
 public class PortalApplication extends SpringBootServletInitializer{
 	public static void main(String[] args) {
 		SpringApplication.run(PortalApplication.class, args);
