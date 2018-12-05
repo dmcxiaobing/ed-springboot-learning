@@ -7,8 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
-// 6223 2828 0004 4421 547 1.4
-// 7+5+10=2.2+1.4=3.6+1.3=4.9
 public class BaseEntity implements Serializable {
 	@Id
 	@Column(name = "Id")
