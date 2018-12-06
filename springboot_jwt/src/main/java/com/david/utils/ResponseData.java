@@ -2,6 +2,11 @@ package com.david.utils;
 
 import java.util.HashMap;
 import java.util.Map;
+/**
+ * @author ：David
+ * @weibo ：https://weibo.com/mcxiaobing
+ * @github: https://github.com/QQ986945193
+ */
 public class ResponseData {
     public static final String ERRORS_KEY = "errors";
 

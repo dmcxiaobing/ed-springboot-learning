@@ -8,7 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+/**
+ * @author ：David
+ * @weibo ：https://weibo.com/mcxiaobing
+ * @github: https://github.com/QQ986945193
+ */
+/**
+ * 简单测试jwt
+ */
 @Controller
 @RequestMapping("/users")
 public class UserController {
@@ -16,7 +23,7 @@ public class UserController {
     @GetMapping("/login")
     @ResponseBody
     public ResponseData login(@RequestParam String username, @RequestParam String password) {
-        if ("xiaoli".equals(username) && "123456".equals(password)) {
+        if ("david".equals(username) && "123456".equals(password)) {
             ResponseData responseData = ResponseData.ok();
             User user = new User();
             user.setId(1);
@@ -35,11 +42,12 @@ public class UserController {
 
     @GetMapping("/getUser")
     @ResponseBody
-    public ResponseData getInfo(@RequestParam String token) {
+    public ResponseData getUser(@RequestParam String token) {
         User user = JwtUtil.unsign(token, User.class);
         if (user != null) {
             return ResponseData.ok().putDataValue("user", user);
         }
         return ResponseData.customerError().putDataValue(ResponseData.ERRORS_KEY, new String[] { "token不合法" });
     }
+
 }

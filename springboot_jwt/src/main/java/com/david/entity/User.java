@@ -1,5 +1,9 @@
 package com.david.entity;
-
+/**
+ * @author ：David
+ * @weibo ：https://weibo.com/mcxiaobing
+ * @github: https://github.com/QQ986945193
+ */
 public class User {
     private long id;
     private String username;

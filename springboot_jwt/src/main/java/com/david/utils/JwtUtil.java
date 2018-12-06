@@ -6,7 +6,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * @author ：David
+ * @weibo ：https://weibo.com/mcxiaobing
+ * @github: https://github.com/QQ986945193
+ */
+/**
+ * JWT工具类
+ */
 public class JwtUtil {
     private static final String SECRET = "XX#$%()(#*!()!KL<><MQLMNQNQJQK sdfkjsdrow32234545fdf>?N<:{LWPW";
 
@@ -15,12 +22,7 @@ public class JwtUtil {
     private static final String PAYLOAD = "payload";
 
     /**
-     * get jwt String of object
-     * @param object
-     *            the POJO object
-     * @param maxAge
-     *            the milliseconds of life time
-     * @return the jwt token
+     * 根据对象加密生成token。
      */
     public static <T> String sign(T object, long maxAge) {
         try {
@@ -38,9 +40,7 @@ public class JwtUtil {
 
 
     /**
-     * get the object of jwt if not expired
-     * @param jwt
-     * @return POJO object
+     * 根据加密token，解析返回对象
      */
     public static<T> T unsign(String jwt, Class<T> classT) {
         final JWTVerifier verifier = new JWTVerifier(SECRET);
