@@ -73,5 +73,8 @@
 		<module>david_springboot_wxpay</module>
 		<module>david_springboot_baseweb</module>
 		<module>david_springboot_ftp</module>
+		<module>david_springboot_kafka</module>
+		<module>david_springboot_netty_server</module>
+		<module>david_springboot_sqlserver_dmybatis</module>
 	</modules>
 </project>
