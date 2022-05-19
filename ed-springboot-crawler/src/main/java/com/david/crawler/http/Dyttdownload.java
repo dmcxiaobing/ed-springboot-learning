@@ -68,7 +68,7 @@ public class Dyttdownload {
 			Elements elements = doc.select("table.tbspan ");
 			for (Element element : elements) {
 				element.setBaseUri("http://www.ygdy8.net");
-				// 获取tr标签中的，第一个td.然后根据td中的标签获取a标签内容。
+				// 获取tr标签中的，第2个td.然后根据td中的标签获取a标签内容。
 				DyUrl dy = getDownloadUrl(element.select("tr").get(1).select("a").text(),
 						// 获取到超链接。
 						element.select("tr").get(1).select("a").attr("abs:href"));

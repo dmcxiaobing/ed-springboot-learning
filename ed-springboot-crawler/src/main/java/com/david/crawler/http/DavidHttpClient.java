@@ -7,7 +7,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.conn.params.ConnRouteParams;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.CoreConnectionPNames;
 import org.apache.http.util.EntityUtils;
@@ -35,7 +34,7 @@ public class DavidHttpClient {
 			//.setParameter(ConnRouteParams.DEFAULT_PROXY, new HttpHost("dailiip"))
 			.setParameter(CoreConnectionPNames.SO_TIMEOUT, 10000);
 			// 使用get请求，创建请求对象
-			HttpGet httpGet = new HttpGet("https://blog.csdn.net/huangyuhuangyu/article/details/80011683");
+			HttpGet httpGet = new HttpGet("http://weibo.com/mcxiaobing");
 			// 发送请求，获取响应数据
 			HttpResponse response = httpClient.execute(httpGet);
 			// 将网页实体转换成字符串

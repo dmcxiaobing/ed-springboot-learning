@@ -1,11 +1,9 @@
 package com.david.crawler.utils;
 
-import java.beans.Encoder;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
-import javax.sound.sampled.AudioFormat.Encoding;
 
 import org.junit.Test;
 
