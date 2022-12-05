@@ -15,7 +15,7 @@
 		<dependency>
 			<groupId>commons-net</groupId>
 			<artifactId>commons-net</artifactId>
-			<version>3.3</version>
+			<version>3.9.0</version>
 		</dependency>
 		<!--thymeleaf模板jar，是很不错的html数据传递取值，类似jsp的jstl -->
 		<dependency>
